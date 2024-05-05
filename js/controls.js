@@ -1,25 +1,33 @@
 class Controls{
-    constructor(){
+    constructor(controlType){
         this.forward = false;
         this.reverse = false;
         this.left = false;
         this.right = false;
-        this.#addKeyboardListeners();
+        switch(controlType){
+            case 'KEYS':
+                this.#addKeyboardListeners();
+                break;
+            default:
+                this.forward = true;
+                break;
+        }
+
     }
 
     #addKeyboardListeners(){
         document.addEventListener('keydown',e=>{
             switch(e.key){
-                case 'w':
+                case 'w' || 'ArrowUp' || 'W':
                     this.forward = true;
                     break;
-                case 's':
+                case 's' || 'ArrowDown' || 'S':
                     this.reverse = true;
                     break;
-                case 'a':
+                case 'a' || 'ArrowLeft' || 'A':
                     this.left = true;
                     break;
-                case 'd':
+                case 'd' || 'ArrowRight' || 'D':
                     this.right = true;
                     break;
             }
