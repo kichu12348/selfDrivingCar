@@ -7,7 +7,7 @@ const ctx = canvas.getContext('2d');
 const networkCtx = networkCanvas.getContext('2d');
 
 
-const road = new Road(canvas.width/2, canvas.width*0.9,4);
+const road = new Road(canvas.width/2, canvas.width*0.9,3);
 
 const N = localStorage.getItem('bestBrain')?1:100;
 const cars = generateCars(N);
